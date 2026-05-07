@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Qiziltepa Tezkor</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800;900&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#" class="logo">
+        <span class="logo__icon">⚡</span>
+        <span class="logo__text">Qiziltepa <span class="logo__accent">Tezkor</span></span>
+      </a>
+      <nav class="nav" id="nav">
+        <a href="#categories" class="nav__link">Kategoriyalar</a>
+        <a href="#how" class="nav__link">Qanday ishlaydi</a>
+        <a href="#features" class="nav__link">Afzalliklar</a>
+        <a href="#contact" class="nav__link">Aloqa</a>
+      </nav>
+      <div class="header__actions">
+        <button class="btn btn--outline" id="loginBtn">Kirish</button>
+        <button class="btn btn--primary" id="orderBtn">Buyurtma</button>
+      </div>
+      <button class="burger" id="burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__bg">
+      <div class="hero__blob blob1"></div>
+      <div class="hero__blob blob2"></div>
+      <div class="hero__blob blob3"></div>
+    </div>
+    <div class="container hero__inner">
+      <div class="hero__text">
+        <div class="hero__badge">🚀 Qiziltepa #1 yetkazib berish xizmati</div>
+        <h1 class="hero__title">
+          Har narsani <span class="highlight">tezda</span><br>
+          eshigingizga!
+        </h1>
+        <p class="hero__desc">
+          Oziq-ovqat, dori, maishiy texnika va boshqa mahsulotlar — 
+          <strong>30 daqiqada</strong> siz ko'rsatgan manzilga yetkaziladi.
+        </p>
+        <div class="hero__search">
+          <input type="text" placeholder="Manzilni kiriting..." class="search__input" id="addressInput"/>
+          <button class="btn btn--primary search__btn" onclick="handleSearch()">Boshlash</button>
+        </div>
+        <div class="hero__stats">
+          <div class="stat">
+            <span class="stat__num">12 000+</span>
+            <span class="stat__label">Bajarilgan buyurtma</span>
+          </div>
+          <div class="stat__divider"></div>
+          <div class="stat">
+            <span class="stat__num">30 daq</span>
+            <span class="stat__label">O'rtacha yetkazish</span>
+          </div>
+          <div class="stat__divider"></div>
+          <div class="stat">
+            <span class="stat__num">4.9 ⭐</span>
+            <span class="stat__label">Mijozlar bahosi</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero__visual">
+        <div class="phone-mockup">
+          <div class="phone__screen">
+            <div class="phone__top-bar">
+              <span class="phone__app-name">⚡ Tezkor</span>
+              <span class="phone__time">12:45</span>
+            </div>
+            <div class="phone__map">
+              <div class="map__pin pin--store">🏪</div>
+              <div class="map__route"></div>
+              <div class="map__pin pin--rider">🛵</div>
+              <div class="map__pin pin--home">🏠</div>
+            </div>
+            <div class="phone__order-card">
+              <div class="order__icon">📦</div>
+              <div class="order__info">
+                <span class="order__title">Buyurtmangiz yo'lda!</span>
+                <span class="order__eta">~12 daqiqa qoldi</span>
+              </div>
+              <div class="order__pulse"></div>
+            </div>
+            <div class="phone__items">
+              <div class="mini-item">🥛 Sut × 2</div>
+              <div class="mini-item">🍞 Non × 1</div>
+              <div class="mini-item">🧃 Sharbat × 3</div>
+            </div>
+          </div>
+        </div>
+        <div class="floating-badge badge--speed">
+          <span>⚡</span> 30 daqiqa
+        </div>
+        <div class="floating-badge badge--free">
+          <span>🎁</span> Bepul yetkazish
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORIES -->
+  <section class="categories section" id="categories">
+    <div class="container">
+      <div class="section__header">
+        <h2 class="section__title">Kategoriyalar</h2>
+        <p class="section__sub">2000+ mahsulot bir joyda</p>
+      </div>
+      <div class="cat__grid">
+        <div class="cat__card" data-cat="Oziq-ovqat">
+          <div class="cat__emoji">🛒</div>
+          <div class="cat__name">Oziq-ovqat</div>
+          <div class="cat__count">850+ mahsulot</div>
+        </div>
+        <div class="cat__card" data-cat="Meva-sabzavot">
+          <div class="cat__emoji">🥦</div>
+          <div class="cat__name">Meva-sabzavot</div>
+          <div class="cat__count">320+ mahsulot</div>
+        </div>
+        <div class="cat__card" data-cat="Sut mahsulotlari">
+          <div class="cat__emoji">🥛</div>
+          <div class="cat__name">Sut mahsulotlari</div>
+          <div class="cat__count">140+ mahsulot</div>
+        </div>
+        <div class="cat__card" data-cat="Dori-darmon">
+          <div class="cat__emoji">💊</div>
+          <div class="cat__name">Dori-darmon</div>
+          <div class="cat__count">500+ mahsulot</div>
+        </div>
+        <div class="cat__card" data-cat="Maishiy kimyo">
+          <div class="cat__emoji">🧹</div>
+          <div class="cat__name">Maishiy kimyo</div>
+          <div class="cat__count">210+ mahsulot</div>
+        </div>
+        <div class="cat__card" data-cat="Go'sht va baliq">
+          <div class="cat__emoji">🥩</div>
+          <div class="cat__name">Go'sht & Baliq</div>
+          <div class="cat__count">90+ mahsulot</div>
+        </div>
+        <div class="cat__card" data-cat="Non-konditер">
+          <div class="cat__emoji">🍰</div>
+          <div class="cat__name">Non & Konditer</div>
+          <div class="cat__count">170+ mahsulot</div>
+        </div>
+        <div class="cat__card" data-cat="Ichimliklar">
+          <div class="cat__emoji">🧃</div>
+          <div class="cat__name">Ichimliklar</div>
+          <div class="cat__count">260+ mahsulot</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how section" id="how">
+    <div class="container">
+      <div class="section__header">
+        <h2 class="section__title">Qanday ishlaydi?</h2>
+        <p class="section__sub">Atigi 3 qadam</p>
+      </div>
+      <div class="how__steps">
+        <div class="step">
+          <div class="step__num">01</div>
+          <div class="step__icon">📍</div>
+          <h3 class="step__title">Manzil kiriting</h3>
+          <p class="step__desc">Yetkazib berish manzilingizni ilovada yoki saytda ko'rsating.</p>
+        </div>
+        <div class="step__arrow">→</div>
+        <div class="step">
+          <div class="step__num">02</div>
+          <div class="step__icon">🛍️</div>
+          <h3 class="step__title">Mahsulot tanlang</h3>
+          <p class="step__desc">2000+ mahsulot ichidan keraklilarini savatga soling.</p>
+        </div>
+        <div class="step__arrow">→</div>
+        <div class="step">
+          <div class="step__num">03</div>
+          <div class="step__icon">🚀</div>
+          <h3 class="step__title">Qabul qiling</h3>
+          <p class="step__desc">Kuryer 30 daqiqada mahsulotni eshigingizga olib keladi.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features section" id="features">
+    <div class="container">
+      <div class="section__header">
+        <h2 class="section__title">Nima uchun biz?</h2>
+        <p class="section__sub">Qiziltepa Tezkorning afzalliklari</p>
+      </div>
+      <div class="feat__grid">
+        <div class="feat__card feat--accent">
+          <div class="feat__icon">⚡</div>
+          <h3>Ultra tez yetkazish</h3>
+          <p>O'rtacha 30 daqiqa ichida mahsulotingiz eshigingizda. Tezkor garantiya!</p>
+        </div>
+        <div class="feat__card">
+          <div class="feat__icon">💰</div>
+          <h3>Qulay narxlar</h3>
+          <p>Do'kon narxlari bilan bir xil. Hech qanday yashirin to'lovlar yo'q.</p>
+        </div>
+        <div class="feat__card">
+          <div class="feat__icon">🕐</div>
+          <h3>24/7 ishlaydi</h3>
+          <p>Kecha-kunduz, dam olish kunlarida ham buyurtma qabul qilamiz.</p>
+        </div>
+        <div class="feat__card">
+          <div class="feat__icon">🔒</div>
+          <h3>Xavfsiz to'lov</h3>
+          <p>Karta, naqd pul yoki online to'lov usullari. Xavfsiz va qulay.</p>
+        </div>
+        <div class="feat__card">
+          <div class="feat__icon">📊</div>
+          <h3>Real vaqt kuzatuv</h3>
+          <p>Buyurtmangizni xarita orqali real vaqtda kuzating.</p>
+        </div>
+        <div class="feat__card feat--dark">
+          <div class="feat__icon">🎁</div>
+          <h3>Bonus va chegirmalar</h3>
+          <p>Har buyurtmadan ball yig'ing, keyingi buyurtmada chegirma oling!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROMO BANNER -->
+  <section class="promo">
+    <div class="container promo__inner">
+      <div class="promo__text">
+        <h2>Birinchi buyurtma — <span>BEPUL!</span></h2>
+        <p>Qiziltepa Tezkorga birinchi marta buyurtma berayotganlar uchun yetkazish to'liq bepul.</p>
+        <button class="btn btn--white" onclick="showPromo()">Promo kodni olish</button>
+      </div>
+      <div class="promo__visual">🎉</div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="reviews section">
+    <div class="container">
+      <div class="section__header">
+        <h2 class="section__title">Mijozlar fikri</h2>
+        <p class="section__sub">12 000+ baxtli mijoz</p>
+      </div>
+      <div class="reviews__grid">
+        <div class="review__card">
+          <div class="review__avatar">👩</div>
+          <div class="review__stars">⭐⭐⭐⭐⭐</div>
+          <p class="review__text">"Hayotimni osonlashtirdi! 25 daqiqada uyimga non va sut keldi. Ajoyib xizmat!"</p>
+          <span class="review__name">Malika X., Qiziltepa</span>
+        </div>
+        <div class="review__card">
+          <div class="review__avatar">👨</div>
+          <div class="review__stars">⭐⭐⭐⭐⭐</div>
+          <p class="review__text">"Narxlar do'konnikiday, lekin uyga olib kelishadi. Doim foydalanaman!"</p>
+          <span class="review__name">Bobur T., Qiziltepa</span>
+        </div>
+        <div class="review__card">
+          <div class="review__avatar">👩‍💼</div>
+          <div class="review__stars">⭐⭐⭐⭐⭐</div>
+          <p class="review__text">"Ish vaqtida ham buyurtma bersam bo'ladi. Kuzatish funksiyasi juda qulay!"</p>
+          <span class="review__name">Nilufar R., Qiziltepa</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APP DOWNLOAD -->
+  <section class="app-download section">
+    <div class="container app__inner">
+      <div class="app__text">
+        <h2>Ilovani yuklab oling</h2>
+        <p>Buyurtmalarni yanada qulay boshqarish uchun mobil ilovamizni o'rnating.</p>
+        <div class="app__btns">
+          <button class="app__btn" onclick="alert('Tez orada!')">
+            <span class="app__store-icon">🍎</span>
+            <div>
+              <small>App Store'da</small>
+              <strong>iOS uchun</strong>
+            </div>
+          </button>
+          <button class="app__btn" onclick="alert('Tez orada!')">
+            <span class="app__store-icon">🤖</span>
+            <div>
+              <small>Google Play'da</small>
+              <strong>Android uchun</strong>
+            </div>
+          </button>
+        </div>
+      </div>
+      <div class="app__qr">
+        <div class="qr__box">
+          <div class="qr__pattern"></div>
+          <p>QR-kod skan qiling</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact section" id="contact">
+    <div class="container">
+      <div class="section__header">
+        <h2 class="section__title">Aloqa</h2>
+        <p class="section__sub">Biz bilan bog'laning</p>
+      </div>
+      <div class="contact__grid">
+        <div class="contact__info">
+          <div class="contact__item">
+            <span class="contact__icon">📞</span>
+            <div>
+              <strong>Telefon</strong>
+              <a href="tel:+998901234567">+998 90 123 45 67</a>
+            </div>
+          </div>
+          <div class="contact__item">
+            <span class="contact__icon">📍</span>
+            <div>
+              <strong>Manzil</strong>
+              <span>Qiziltepa shahri, Markaziy ko'cha 1</span>
+            </div>
+          </div>
+          <div class="contact__item">
+            <span class="contact__icon">✉️</span>
+            <div>
+              <strong>Email</strong>
+              <a href="mailto:info@qiziltepatezkоr.uz">info@qiziltepatezkоr.uz</a>
+            </div>
+          </div>
+          <div class="contact__item">
+            <span class="contact__icon">🕐</span>
+            <div>
+              <strong>Ish vaqti</strong>
+              <span>24/7 — Doim ishlaydi</span>
+            </div>
+          </div>
+          <div class="contact__socials">
+            <a href="#" class="social__btn">📱 Telegram</a>
+            <a href="#" class="social__btn">📷 Instagram</a>
+          </div>
+        </div>
+        <form class="contact__form" id="contactForm">
+          <h3>Xabar yuborish</h3>
+          <div class="form__group">
+            <label>Ismingiz</label>
+            <input type="text" placeholder="Ism Familiya" required />
+          </div>
+          <div class="form__group">
+            <label>Telefon</label>
+            <input type="tel" placeholder="+998 XX XXX XX XX" required />
+          </div>
+          <div class="form__group">
+            <label>Xabar</label>
+            <textarea placeholder="Savolingiz yoki taklifingiz..." rows="4" required></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary btn--full">Yuborish</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="#" class="logo">
+          <span class="logo__icon">⚡</span>
+          <span class="logo__text">Qiziltepa <span class="logo__accent">Tezkor</span></span>
+        </a>
+        <p>Qiziltepadagi eng tezkor yetkazib berish xizmati. 30 daqiqada eshigingizga!</p>
+      </div>
+      <div class="footer__links">
+        <h4>Xizmatlar</h4>
+        <a href="#">Oziq-ovqat</a>
+        <a href="#">Dori-darmon</a>
+        <a href="#">Maishiy kimyo</a>
+        <a href="#">Meva-sabzavot</a>
+      </div>
+      <div class="footer__links">
+        <h4>Kompaniya</h4>
+        <a href="#">Biz haqimizda</a>
+        <a href="#">Hamkorlik</a>
+        <a href="#">Kuryer bo'lish</a>
+        <a href="#">Yangiliklar</a>
+      </div>
+      <div class="footer__links">
+        <h4>Yordam</h4>
+        <a href="#">FAQ</a>
+        <a href="#">Aloqa</a>
+        <a href="#">Qaytarish siyosati</a>
+        <a href="#">Maxfiylik</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container">
+        <span>© 2025 Qiziltepa Tezkor. Barcha huquqlar himoyalangan.</span>
+        <span>❤️ Qiziltepada yaratilgan</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODAL -->
+  <div class="modal" id="modal">
+    <div class="modal__backdrop" onclick="closeModal()"></div>
+    <div class="modal__box">
+      <button class="modal__close" onclick="closeModal()">✕</button>
+      <div class="modal__content" id="modalContent"></div>
+    </div>
+  </div>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast"></div>
+
+  <!-- BOTTOM NAV (mobil) -->
+  <nav class="bottom-nav" id="bottomNav">
+    <div class="bottom-nav__wrapper">
+      <button class="bottom-nav__item active" onclick="scrollToTop()">
+        <span class="bottom-nav__icon">🏠</span>
+        <span>Bosh sahifa</span>
+      </button>
+      <button class="bottom-nav__item" onclick="scrollToSection('categories')">
+        <span class="bottom-nav__icon">🛒</span>
+        <span>Katalog</span>
+      </button>
+      <button class="bottom-nav__item center-btn" id="orderBtn2">
+        <span class="bottom-nav__icon">⚡</span>
+        <span>Buyurtma</span>
+      </button>
+      <button class="bottom-nav__item" onclick="scrollToSection('features')">
+        <span class="bottom-nav__icon">⭐</span>
+        <span>Afzalliklar</span>
+      </button>
+      <button class="bottom-nav__item" onclick="scrollToSection('contact')">
+        <span class="bottom-nav__icon">📞</span>
+        <span>Aloqa</span>
+      </button>
+    </div>
+  </nav>
+
+  <script src="script.js"></script>
+</body>
+</html>
